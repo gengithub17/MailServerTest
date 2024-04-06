@@ -1,0 +1,35 @@
+version: '3.9'
+
+services:
+  sender:
+    build: 
+      dockerfile: ./Dockerfile_sender 
+    tty: true
+    networks:
+      Localnet:
+        ipv4_address: 172.19.0.2
+
+  imposter:
+    build:
+      dockerfile: ./Dockerfile_sender
+    tty: true
+    networks:
+      Localnet:
+        ipv4_address: 172.19.0.3
+
+  receiver_dns:
+    build:
+      dockerfile: ./Dockerfile_receiver
+    tty: true
+    networks:
+      Localnet:
+        ipv4_address: 172.19.0.4
+
+networks:
+  Localnet:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+      - subnet: 172.19.0.0/24
+        gateway: 172.19.0.1

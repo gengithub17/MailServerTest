@@ -1,0 +1,17 @@
+zone "sender.com" {
+	type master;
+	file "/etc/bind/sender.com";
+	allow-update {none;};
+};
+
+zone "receiver.com" {
+	type master;
+	file "/etc/bind/receiver.com";
+	allow-update {none;};
+};
+
+zone "0.19.172.in-addr.arpa" {
+	type master;
+	file "/etc/bind/db.localnet";
+	allow-update {none;};
+};

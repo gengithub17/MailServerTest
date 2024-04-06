@@ -1,0 +1,5 @@
+$TTL 86400
+@	IN	SOA	receiver.com. root.receiver.com 1 10800 3600 604800 3600
+	IN	NS	localhost.
+2	IN	PTR	sender.com.
+4	IN	PTR	receiver.com.

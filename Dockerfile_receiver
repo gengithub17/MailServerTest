@@ -1,0 +1,9 @@
+FROM ubuntu:latest
+
+RUN apt-get update && apt-get install -y nano bind9utils bind9 dnsutils
+ENV DEBIAN_FRONTEND=noninteractive
+RUN apt-get install -y postfix
+RUN apt-get install -y postfix-policyd-spf-python opendkim opendmarc
+COPY ./bind/ /etc/bind
+RUN echo 'include "/etc/bind/named.conf.external-zones";' >> /etc/bind/named.conf
+RUN chown -R bind:bind /etc/bind/
