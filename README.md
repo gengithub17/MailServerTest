@@ -17,6 +17,8 @@ SPF, DKIM, DMARCの設定および動作テストでの利用を想定。
 - OpenDMARC
 - dnsutils
   - digコマンド等
+- inetutils-syslogd
+  - syslogのかわりをインストール
 
 ## Begin
 ```
@@ -27,6 +29,7 @@ $ docker-compose up -d
 ```
 各コンテナには以下のコマンドでUbuntuのbashにログイン
 ```
+$ docker ps
 $ docker exec -it <Container Name> bash
 ```
 

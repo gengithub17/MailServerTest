@@ -1,5 +1,5 @@
 FROM ubuntu:latest
 
-RUN apt-get update && apt-get install -y nano dnsutils
+RUN apt-get update && apt-get install -y nano dnsutils inetutils-syslogd
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get install -y postfix opendkim
